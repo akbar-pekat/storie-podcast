@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Storie - Beta</title>
+  <link rel="stylesheet" href="audio.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  <link rel="stylesheet" href="plyr.css" />
+</head>
+<body>
+  <header>
+    <div class="back-wrapper">
+      <i class="uil uil-arrow-left"></i>
+      <span>Kembali</span>
+    </div>
+    <div class="user">
+      <img id="thumbnail" src="" />
+      <div class="text">
+        <h3 id="judul"></h3>
+        <p id="lisensi"></p>
+      </div>   
+    </div>
+  </header>
+  <div class="container">
+    <div class="tab">
+      <div id="playlist" class="item active">Playlist</div>
+      <div id="deskripsi" class="item">Deskripsi</div>
+    </div>
+    <br>
+    <div class="deskripsi-tab">
+      <p id="desctext"></p>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper"></div>
+    </div>
+  </div>
+  <div class="player">
+    <audio id="player" controls>
+      <source src="/path/to/audio.mp3" type="audio/mp3" />
+    </audio>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script src="https://cdn.plyr.io/3.6.6/plyr.polyfilled.js"></script>
+  <script src="audio.js"></script>
+</body>
+</html>
