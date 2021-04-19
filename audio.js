@@ -18,6 +18,9 @@ $('#deskripsi').click(function(){
   $('.swiper-container').hide();
   $('.deskripsi-tab').show();
 });
+$('#backbtn').click(function(){
+  window.location.replace("/index.html");
+});
 const player = new Plyr('#player', {
   controls: ['play', 'progress', 'current-time', 'volume'],
 });
@@ -28,6 +31,7 @@ var client = contentful.createClient({
   accessToken: 'w89RyefJ9fdNplr5lxi7gCpCYqkgDTBxoLEClJ0lHKA'
 })
 client.getEntry(datasys).then(function (entry) {
+    var cerita = entry.fields.judulCerita;
     $("#judul").text(entry.fields.judulCerita)
     $("#lisensi").text(entry.fields.lisensiCerita)
     var thumbnailcerita = entry.fields.thumbnailCerita;
@@ -46,16 +50,30 @@ client.getEntries({
     var audio = ei[i].fields.audioMp3;
     var keterangan = ei[i].fields.keteranganEpisode;
     if (datacerita == idcerita) {
-      swiper.appendSlide('<div class="swiper-slide"><div class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><p>'+keterangan+'</p></div><i data-audio="'+audio+'" class="uil uil-play-circle"></i></div></div>');
+      swiper.appendSlide('<div class="swiper-slide"><div class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><p>'+keterangan+'</p></div><i data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'" class="uil uil-play-circle"></i></div></div>');
     }
   }
   $(".uil-play-circle").click(function(event) {
     event.preventDefault();
     var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
+    var metacerita = $("#judul").text();
+    var metaepisode = $(this).attr("data-episode");
+    var metathumbnail = $(this).attr("data-thumbnail");
     setTimeout(function() {
-      $('#player').get(0).play();
-      $(this).hide();
+      $('#player').get(0).play().then(_ => {
+        if ('mediaSession' in navigator) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+          title: metaepisode,
+          artist: 'Storie',
+          album: metacerita,
+          artwork: [
+            { src: metathumbnail, sizes: '512x512', type: 'image/png' },
+          ]
+        });
+      }
+    })
+    $(this).hide();
     }, 1000);
   });
 });

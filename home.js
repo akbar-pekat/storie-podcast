@@ -10,6 +10,9 @@ $(document).ready(function() {
       dynamicBullets: true,
     },
   });
+  setTimeout(function() {
+    $(".tutorial-swipe").fadeOut();
+  }, 5000);
   var client = contentful.createClient({
     space: 'm4kn5gy5cnl3',
     accessToken: 'w89RyefJ9fdNplr5lxi7gCpCYqkgDTBxoLEClJ0lHKA'
