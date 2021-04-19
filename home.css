@@ -55,18 +55,19 @@ header .profilepicture {
   position: relative;
 }
 .swiper-slide img {
-  width: 290px;
-  height: 280px;
+  width: 275px;
+  height: 265px;
   background-size: cover;
   border-radius: 10px;
 }
 .swiper-slide .data {
   width: 280px;
+  max-width: 280px;
   background: white;
   color: black;
   border-radius: 0 0 10px 10px;
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   padding: 0 1rem;
 }
 .swiper-slide .link {
