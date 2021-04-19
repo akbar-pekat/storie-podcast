@@ -130,39 +130,19 @@ header .profilepicture {
   transform: translateX(-50%);
 }
 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+@media (min-width: 320px) and (min-height: 640px) {
   .swiper-slide img {
     width: 290px;
     height: 280px;
     background-size: cover;
     border-radius: 10px;
   }
-  .swiper-slide .data {
-    width: 280px;
-    max-width: 280px;
-    background: white;
-    color: black;
-    border-radius: 0 0 10px 10px;
-    position: absolute;
-    bottom: 0px;
-    padding: 0 1rem;
-  }
 }
-@media screen and (device-width: 360px) and (device-height: 720px) and (-webkit-device-pixel-ratio: 2) {
+@media (min-width: 320px) and (min-height: 720px) {
   .swiper-slide img {
     width: 330px;
     height: 320px;
     background-size: cover;
     border-radius: 10px;
-  }
-  .swiper-slide .data {
-    width: 280px;
-    max-width: 280px;
-    background: white;
-    color: black;
-    border-radius: 0 0 10px 10px;
-    position: absolute;
-    bottom: 0px;
-    padding: 0 1rem;
   }
 }
