@@ -46,8 +46,11 @@ header .user img {
   display: flex;
   justify-content: space-around;
   padding: 1rem 4rem 0;
+  color: gray;
+  transition: all .3s ease;
 }
 .container .tab .active {
+ transition: all .3s ease;
  padding: 5px 10px;
  border-radius: 50px;
  color: white;
@@ -94,4 +97,18 @@ header .user img {
 .deskripsi-tab {
   padding: 0 1rem;
   display: none;
+}
+.deskripsi-tab .statistik {
+  display: flex;
+  justify-content: space-around;
+}
+.deskripsi-tab .statistik .group {
+  text-align: center;
+}
+.statistik .group small {
+  opacity: .5;
+}
+.deskripsi-tab hr {
+  margin: 1rem 2rem;
+  border: .1px solid lightgray;
 }

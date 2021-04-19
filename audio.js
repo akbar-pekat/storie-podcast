@@ -36,7 +36,7 @@ client.getEntry(datasys).then(function (entry) {
     $("#lisensi").text(entry.fields.lisensiCerita)
     var thumbnailcerita = entry.fields.thumbnailCerita;
     $("#thumbnail").attr("src",thumbnailcerita);
-    $("#desctext").text(entry.fields.lisensiCerita);
+    $("#desctext").text(entry.fields.deskripsiCerita);
 })
 client.getEntries({
   content_type: 'audioPost'
