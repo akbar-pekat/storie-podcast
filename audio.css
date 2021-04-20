@@ -70,9 +70,6 @@ header .user img {
   border-radius: 5px;
   transition: all .3s ease;
 }
-.swiper-slide .wrapper:hover {
-  box-shadow: 0 7px 10px 0 rgba(0,0,0,.05);
-}
 .swiper-slide .wrapper img {
   height: 55px;
   margin-right: 10px;
@@ -81,7 +78,7 @@ header .user img {
 .swiper-slide .wrapper .data {
   width: 100%;
 }
-.swiper-slide .wrapper .data p {
+.swiper-slide .wrapper .data small {
   opacity: .5;
 }
 .swiper-slide .wrapper i {
