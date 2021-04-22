@@ -36,6 +36,8 @@ client.getEntry(datasys).then(function (entry) {
     $("#lisensi").text(entry.fields.lisensiCerita)
     var thumbnailcerita = entry.fields.thumbnailCerita;
     $("#thumbnail").attr("src",thumbnailcerita);
+    var backgroundcerita = entry.fields.backgroundCerita;
+    $("body").css("background-image", 'url('+backgroundcerita+')');
     $("#desctext").text(entry.fields.deskripsiCerita);
 })
 client.getEntries({
@@ -50,13 +52,11 @@ client.getEntries({
     var audio = ei[i].fields.audioMp3;
     var keterangan = ei[i].fields.keteranganEpisode;
     if (datacerita == idcerita) {
-      swiper.appendSlide('<div class="swiper-slide"><div class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><small>'+keterangan+'</small></div><i data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'" class="uil uil-play"></i></div></div>');
+      swiper.appendSlide('<div class="swiper-slide"><div data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'" class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><small>'+keterangan+'</small></div></div></div>');
     }
   }
-  $(".uil-play").click(function(event) {
+  $(".swiper-slide .wrapper").click(function(event) {
     event.preventDefault();
-    $(".uil-play").show();
-    $(this).hide();
     var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
     var metacerita = $("#judul").text();
