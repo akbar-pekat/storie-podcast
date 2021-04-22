@@ -76,6 +76,7 @@ header .profilepicture {
   height: 100%;
   position: absolute;
   z-index: 1;
+  cursor: none;
 }
 .swiper-pagination {
   position: absolute;
