@@ -19,7 +19,8 @@ $('#deskripsi').click(function(){
   $('.deskripsi-tab').show();
 });
 $('#backbtn').click(function(){
-  window.location.replace("/index.html");
+  window.history.go(-1);
+  return false;
 });
 const player = new Plyr('#player', {
   controls: ['play', 'progress', 'current-time', 'volume'],
