@@ -3,8 +3,7 @@ var swiper = new Swiper('.swiper-container', {
   loop: false,
   slideToClickedSlide: true,
   simulateTouch: true,
-  slidesPerView: 4,
-  spaceBetween: 10,
+  slidesPerView: 'auto',
 });
 $('.tab .item').click(function(){
   $('.tab .item').removeClass("active");
@@ -52,6 +51,8 @@ client.getEntries({
     var thumbnail = ei[i].fields.thumbnailEpisode;
     var audio = ei[i].fields.audioMp3;
     var keterangan = ei[i].fields.keteranganEpisode;
+    var firstaudio = ei[0].fields.audioMp3;
+    $("#player").attr("src", firstaudio);
     if (datacerita == idcerita) {
       swiper.appendSlide('<div class="swiper-slide"><div data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'" class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><small>'+keterangan+'</small></div></div></div>');
     }
