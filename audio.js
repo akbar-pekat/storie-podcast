@@ -18,6 +18,8 @@ $('#deskripsi').click(function(){
   $('.deskripsi-tab').show();
 });
 $('#backbtn').click(function(){
+  localStorage.removeItem("datacerita");
+  localStorage.removeItem("datasys");
   window.history.go(-1);
   return false;
 });
@@ -25,7 +27,10 @@ const player = new Plyr('#player', {
   controls: ['play', 'progress', 'current-time', 'volume'],
 });
 var datacerita =localStorage.getItem("datacerita");
-var datasys =localStorage.getItem("datasys");
+var datasys = localStorage.getItem("datasys");
+if (datacerita == null) {
+  window.location.replace("index.html");
+}
 var client = contentful.createClient({
   space: 'm4kn5gy5cnl3',
   accessToken: 'w89RyefJ9fdNplr5lxi7gCpCYqkgDTBxoLEClJ0lHKA'

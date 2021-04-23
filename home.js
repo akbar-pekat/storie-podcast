@@ -18,7 +18,8 @@ $(document).ready(function() {
     accessToken: 'w89RyefJ9fdNplr5lxi7gCpCYqkgDTBxoLEClJ0lHKA'
   })
   client.getEntries({
-    content_type: 'contentPost'
+    content_type: 'contentPost',
+    order: 'sys.createdAt'
   }).then(function (entries) {
     var ei = entries.items;
     var i;

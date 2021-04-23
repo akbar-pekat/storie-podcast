@@ -7,7 +7,7 @@
 }
 
 body {
-  background: rgb(142, 45, 226);
+  background: #8E2DE2;
   background: linear-gradient(140deg, rgba(142, 45, 226, 1) 0%, rgba(74, 0, 224, 1) 100%);
   background-repeat: no-repeat;
 }
@@ -89,7 +89,7 @@ header .profilepicture {
 }
 .navbar {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0rem;
   background-color: white;
 }
@@ -115,7 +115,7 @@ header .profilepicture {
   font-size: 28px;
 }
 .navbar .cont .active {
-  color: #8E0FED;
+  color: #8E2DE2;
   position: relative;
   transition: all .3s ease;
 }
@@ -125,7 +125,7 @@ header .profilepicture {
   width: 6px;
   height: 6px;
   border-radius: 50px;
-  background-color: #8E0FED;
+  background-color: #8E2DE2;
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
