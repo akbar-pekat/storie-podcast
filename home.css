@@ -87,6 +87,13 @@ header .profilepicture {
   background: #8E2DE2!important;
   background-color: #8E2DE2;
 }
+
+.wrap {
+  background-color: white;
+  padding: 0 1rem 2rem;
+  margin-bottom: 4rem;
+}
+
 .navbar {
   width: 100%;
   position: fixed;

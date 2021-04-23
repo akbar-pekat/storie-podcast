@@ -66,6 +66,8 @@ client.getEntries({
   $(".swiper-slide").click(function(event) {
     event.preventDefault();
     $(".swiper-slide .uil-caret-right").hide();
+    $(".wrapper").css("padding-left", "0px");
+    $(this).find(".wrapper").css("padding-left", "5px");
     $(this).find(".uil-caret-right").show();
     var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
