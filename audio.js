@@ -41,7 +41,8 @@ client.getEntry(datasys).then(function (entry) {
     $("#desctext").text(entry.fields.deskripsiCerita);
 })
 client.getEntries({
-  content_type: 'audioPost'
+  content_type: 'audioPost',
+  order: '-sys.createdAt'
 }).then(function (entries) {
   var ei = entries.items;
   var i;
