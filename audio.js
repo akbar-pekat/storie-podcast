@@ -55,11 +55,13 @@ client.getEntries({
     var firstaudio = ei[0].fields.audioMp3;
     $("#player").attr("src", firstaudio);
     if (datacerita == idcerita) {
-      swiper.appendSlide('<div class="swiper-slide"><div data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'" class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><small>'+keterangan+'</small></div></div></div>');
+      swiper.appendSlide('<div class="swiper-slide" data-audio="'+audio+'" data-episode="'+judul+'" data-thumbnail="'+thumbnail+'"><i class="uil uil-caret-right"></i><div class="wrapper"><img src="'+thumbnail+'"/><div class="data"><h4>'+judul+'</h4><small>'+keterangan+'</small></div></div></div>');
     }
   }
-  $(".swiper-slide .wrapper").click(function(event) {
+  $(".swiper-slide").click(function(event) {
     event.preventDefault();
+    $(".swiper-slide .uil-caret-right").hide();
+    $(this).find(".uil-caret-right").show();
     var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
     var metacerita = $("#judul").text();
