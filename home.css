@@ -1,98 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
-
 * {
-  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background: #8E2DE2;
-  background: linear-gradient(140deg, rgba(142, 45, 226, 1) 0%, rgba(74, 0, 224, 1) 100%);
-  background-repeat: no-repeat;
-}
-
 header {
-  padding: 2rem 1rem 1rem;
-  color: white;
+  padding: 1rem 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  z-index: -1;
+  background-color: #8E2DE2;
+  color: white;
+}
+header .text {
+  margin-left: 1rem;
 }
 header .text p {
+  line-height: 15px;
   opacity: .8;
 }
-header .profilepicture {
-  height: 40px;
+header .image img {
+  margin-right: 1rem;
+  height: 50px;
   border-radius: 50px;
 }
 
 .container {
-  margin-top: 0rem;
+  margin-top: 5rem;
+  height: 100vh;
   background-color: white;
-  padding: 2rem 0;
-  border-radius: 0px 0 0 0;
-  height: 100%;
-  position: relative;
-  box-shadow: 0 -7px 10px 0 rgba(0,0,0,.05);;
 }
-.tutorial-swipe {
-  padding-bottom: 6px;
-  background-color: rgba(0,0,0,.5);
-  border-radius: 50px;
-  position: absolute;
-  z-index: 3;
-  top: 45%;
-  left: 50%;
-  transform: translateY(-50%)translateX(-50%);
+.container .wrapper {
+  padding-top: 1rem;
 }
+
 .swiper-container {
   width: 100%;
-  height: 350px;
-}
-.swiper-slide {
-  display: flex;
-  justify-content: center;
+  height: 250px;
   position: relative;
 }
-.swiper-slide img {
-  width: 295px;
-  height: 285px;
-  background-size: cover;
-  border-radius: 10px;
-}
-.swiper-slide .data {
-  width: 280px;
-  max-width: 280px;
-  background: white;
-  color: black;
-  border-radius: 0 0 10px 10px;
-  position: absolute;
-  bottom: 15px;
-  padding: 0 1rem;
+.swiper-slide {
+  position: relative;
 }
 .swiper-slide .link {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
-  cursor: none;
+  z-index: 2;
+}
+.swiper-slide .thumbnail {
+  width: 325px;
+  height: 200px;
+  background-color: lightgray;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+.swiper-slide .thumbnail img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.swiper-slide .iconify {
+  font-size: 32px;
+  position: absolute;
+  right: 2rem;
+  bottom: 4rem;
+  color: white;
+}
+.swiper-slide .text {
+  position: absolute;
+  bottom: 5px;
+  left: 1rem;
+}
+.swiper-slide .text h3 {
+  line-height: 13px;
+  font-size: 20px
+}
+.swiper-slide .text small {
+  line-height: 13px;
+  color: darkgray;
 }
 .swiper-pagination {
   position: absolute;
   top: 10px;
+  left: 45%;
+  transform: translateX(-50%);
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #8E2DE2!important;
+  background: #8E2DE2 !important;
   background-color: #8E2DE2;
 }
 
-.wrap {
-  background-color: white;
-  padding: 0 1rem 2rem;
-  margin-bottom: 4rem;
+.container .wrapper hr {
+  margin: 1rem 2rem 1.5rem;
+  border: .1px solid lightgray;
 }
+.container .wrapper .title {
+  padding: 0 1rem;
+  display: none;
+}
+.container .wrapper .title h3 {
+  line-height: 15px;
+}
+.container .wrapper .title small {
+  line-height: 0;
+  color: grey;
+  font-weight: 500;
+}
+
 
 .navbar {
   width: 100%;
@@ -117,6 +138,7 @@ header .profilepicture {
 .navbar .cont .item:after {
   content: attr(data-name);
   color: lightgray;
+  font-size: 1rem;
 }
 .navbar .cont .active i {
   font-size: 28px;
@@ -136,21 +158,4 @@ header .profilepicture {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-@media screen and (min-height: 640px) {
-  .swiper-slide img {
-    width: 290px;
-    height: 300px;
-    background-size: cover;
-    border-radius: 10px;
-  }
-}
-@media screen and (min-height: 720px) {
-  .swiper-slide img {
-    width: 330px;
-    height: 320px;
-    background-size: cover;
-    border-radius: 10px;
-  }
 }
