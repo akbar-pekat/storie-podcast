@@ -35,6 +35,6 @@ client.getEntries({
     var datasys = $(this).attr("data-sys");
     localStorage.setItem("datacerita", datacerita);
     localStorage.setItem("datasys", datasys);
-    window.location.href = "audio.html"
+    window.location.href = "playlist.html"
   });
 });

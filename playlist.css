@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 1rem 0;
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  z-index: -1;
+  background-color: #8E2DE2;
+  background-size: 100%;
+  color: black;
+}
+header .action {
+  margin-left: 1rem;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .action .iconify {
+  font-size: 25px;
+}
+header .action .group {
+  margin-right: 1rem;
+}
+header .text {
+  margin-top: 10px;
+  margin-left: 1rem;
+}
+header .text h2 {
+  width: 50%;
+}
+header .text p {
+  line-height: 20px;
+  opacity: .5;
+}
+
+.container {
+  margin-top: 10rem;
+  height: 90vh;
+  background-color: white;
+}
+.container .wrapper {
+  padding-top: 1rem;
+}
+.container .wrapper .tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5rem;
+  transition: all .3s ease;
+}
+.container .wrapper .tab .vl {
+  border-left: 1px solid lightgray;
+  height: 20px;
+}
+.wrapper .tab .item {
+  color: lightgray;
+  font-weight: 500;
+  padding: 8px 10px;
+}
+.wrapper .tab .active {
+  padding: 8px 10px;
+  background-color: #8E2DE2;
+  color: white;
+  border-radius: 50px;
+  transition: all .3s ease;
+}
+
+.description-cont .statistik {
+  display: flex;
+  justify-content: space-around;
+}
+.description-cont .statistik .group {
+  text-align: center;
+}
+.statistik .group small {
+  opacity: .5;
+}
+.description-cont hr {
+  margin: 1rem 2rem;
+  border: .1px solid lightgray;
+}
+#sinopsis {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.swiper-slide {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  transition: all .3s ease;
+}
+.swiper-slide .iconify {
+  color: #8E2DE2;
+  display: none;
+  transition: all .3s ease;
+}
+.swiper-slide .thumbnail {
+  width: 50px;
+  height: 50px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.swiper-slide .thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.swiper-slide .text small {
+  color: gray;
+  font-weight: 400;
+}
+
+.description-cont {
+  padding: 1rem;
+  display: none;
+}
