@@ -5,7 +5,20 @@
   margin: 0;
   padding: 0;
 }
-
+.action {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.action .group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.action .iconify {
+  font-size: 30px;
+}
 header {
   padding: 1rem 0;
   width: 100%;
@@ -18,21 +31,8 @@ header {
   background-size: 100%;
   color: black;
 }
-header .action {
-  margin-left: 1rem;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .action .iconify {
-  font-size: 25px;
-}
-header .action .group {
-  margin-right: 1rem;
-}
 header .text {
-  margin-top: 10px;
+  margin-top: 35px;
   margin-left: 1rem;
 }
 header .text h2 {
@@ -45,7 +45,7 @@ header .text p {
 
 .container {
   margin-top: 10rem;
-  height: 90vh;
+  height: 91vh;
   background-color: white;
 }
 .container .wrapper {
@@ -94,8 +94,11 @@ header .text p {
   font-weight: 400;
 }
 
+.swiper-container {
+  max-height: 300px;
+}
 .swiper-slide {
-  padding: 1rem;
+  padding: .5rem 1rem;
   display: flex;
   align-items: center;
   transition: all .3s ease;

@@ -20,13 +20,14 @@ $('#deskripsi').click(function(){
 });
 
 $('#backbtn').click(function(){
+  alert('tes')
   localStorage.removeItem("datacerita");
   localStorage.removeItem("datasys");
   window.history.go(-1);
   return false;
 });
 
-var datacerita =localStorage.getItem("datacerita");
+var datacerita = localStorage.getItem("datacerita");
 var datasys = localStorage.getItem("datasys");
 if (datacerita == null) {
   window.location.replace("index.html");
