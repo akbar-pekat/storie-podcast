@@ -15,11 +15,13 @@ var datajudul = localStorage.getItem("datajudul");
 var datathumbnail = localStorage.getItem("datathumbnail");
 var dataaudio = localStorage.getItem("dataaudio")
 var datacerita = localStorage.getItem("datacerita")
+var dataauthor = localStorage.getItem("dataauthor")
 if (datajudul == null) {
   window.location.replace("playlist.html");
 }
 setTimeout(function(){
   $("#judul").text(datajudul);
+  $("#author").text(dataauthor);
   $("#player").attr("src", dataaudio);
   $("#thumbnail").attr("src", datathumbnail);
 }, 500);

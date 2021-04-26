@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .6rem 1rem .5rem;
+  padding: 1rem;
 }
 .action .group button {
   background-color: transparent;
@@ -52,7 +52,7 @@ header .text p {
 
 .container {
   margin-top: 10rem;
-  height: 91vh;
+  height: 100%;
   background-color: white;
 }
 .container .wrapper {

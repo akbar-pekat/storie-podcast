@@ -69,11 +69,13 @@ client.getEntries({
     var datajudul = $(this).attr("data-judul");
     var dataaudio= $(this).attr("data-audio");
     var datathumbnail = $(this).attr("data-thumbnail");
+    var datacerita = $("#judul").text();
+    var dataauthor = $("#author").text();
     localStorage.setItem("datajudul", datajudul);
     localStorage.setItem("datathumbnail", datathumbnail);
     localStorage.setItem("dataaudio", dataaudio);
-    var datacerita = $("#judul").text();
     localStorage.setItem("datacerita", datacerita);
+    localStorage.setItem("dataauthor", dataauthor);
     window.location.href = "play.html"
     /*var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
