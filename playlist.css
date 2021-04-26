@@ -9,16 +9,23 @@
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 .action .group {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: .6rem 1rem .5rem;
+}
+.action .group button {
+  background-color: transparent;
+  outline: none;
+  border: 0
 }
 .action .iconify {
   font-size: 30px;
 }
+
 header {
   padding: 1rem 0;
   width: 100%;

@@ -19,8 +19,7 @@ $('#deskripsi').click(function(){
   $('.description-cont').fadeIn();
 });
 
-$('#backbtn').click(function(){
-  alert('tes')
+$('#tes').click(function(){
   localStorage.removeItem("datacerita");
   localStorage.removeItem("datasys");
   window.history.go(-1);
@@ -60,13 +59,22 @@ client.getEntries({
     var audio = ei[i].fields.audioMp3;
     var keterangan = ei[i].fields.keteranganEpisode;
     if (datacerita == idcerita) {
-      swiper.appendSlide('<div class="swiper-slide"><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="thumbnail"><img src="'+thumbnail+'" /></div><div class="text"><p>'+judul+'</p><small>'+keterangan+'</small></div></div>')
+      swiper.appendSlide('<div class="swiper-slide" data-judul="'+judul+'" data-audio="'+audio+'" data-thumbnail="'+thumbnail+'"><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="thumbnail"><img src="'+thumbnail+'" /></div><div class="text"><p>'+judul+'</p><small>'+keterangan+'</small></div></div>')
     }
   }
   $(".swiper-slide").click(function(event) {
     event.preventDefault();
     $(".swiper-slide .iconify").hide();
     $(this).find(".iconify").fadeIn();
+    var datajudul = $(this).attr("data-judul");
+    var dataaudio= $(this).attr("data-audio");
+    var datathumbnail = $(this).attr("data-thumbnail");
+    localStorage.setItem("datajudul", datajudul);
+    localStorage.setItem("datathumbnail", datathumbnail);
+    localStorage.setItem("dataaudio", dataaudio);
+    var datacerita = $("#judul").text();
+    localStorage.setItem("datacerita", datacerita);
+    window.location.href = "play.html"
     /*var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
     var metacerita = $("#judul").text();

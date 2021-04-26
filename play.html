@@ -9,52 +9,44 @@
   <meta name="author" content="Storie" />
   <meta name="description" content="Storie - Podcast Drama" />
   <title>Storie</title>
-  <link rel="stylesheet" href="playlist.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="play.css" type="text/css" media="all" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="plyr.css" />
 </head>
 <body>
   <div class="action">
     <div class="group">
       <button id="tes"><i class="iconify" data-icon="fe:arrow-left" data-inline="false"></i></button>
-      <i class="iconify" data-icon="fe:heart-o" data-inline="false"></i>
     </div>
   </div>
-  <header>
-    <div class="text">
-      <h2 id="judul">Judul Cerita</h2>
-      <p id="author">Original</p>
-    </div>
-  </header>
   <div class="container">
     <div class="wrapper">
-      <div class="tab">
-        <div id="episode" class="item active">Episode</div>
-        <div class="vl"></div>
-        <div id="deskripsi" class="item">Deskripsi</div>
+      <div class="thumbnail">
+        <img id="thumbnail" src="" />
       </div>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-        </div>
+      <div class="text">
+        <h2 id="judul">Judul Episode</h2>
+        <p>Author</p>
       </div>
-      <div class="description-cont">
-        <div class="statistik">
-          <div class="group">
-            <small>Jadwal</small>
-            <h4>Jumat</h4>
-          </div>
-          <div class="group">
-            <small>Pendengar</small>
-            <h4>100rb</h4>
-          </div>
-          <div class="group">
-            <small>Author</small>
-            <h4>Storie</h4>
-          </div>
+      <div class="player">
+        <audio id="player" controls>
+          <source src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3" type="audio/mp3" />
+        </audio>
+      </div>
+      <div class="button">
+        <div class="like">
+          <button id="heart"><span class="iconify" data-icon="eva:heart-outline" data-inline="false"></span></button>
         </div>
-        <hr />
-        <p id="sinopsis"></p>
+        <div class="playpause">
+          <button id="play"><span class="iconify" data-icon="fe:play" data-inline="false"></span></button>
+          <button id="pause"><span class="iconify" data-icon="fe:pause" data-inline="false"></span></button>
+        </div>
+        <div class="volumemute">
+          <button id="volume"><span class="iconify" data-icon="eva:volume-up-fill" data-inline="false"></span></button>
+          <button id="mute"><span class="iconify" data-icon="eva:volume-off-fill" data-inline="false"></span></button>
+        </div>
       </div>
     </div>
   </div>
@@ -63,7 +55,8 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script src="https://cdn.plyr.io/3.6.6/plyr.polyfilled.js"></script>
   <script src="../script.js" type="text/javascript" charset="utf-8"></script>
-  <script src="playlist.js" type="text/javascript" charset="utf-8"></script>
+  <script src="play.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
