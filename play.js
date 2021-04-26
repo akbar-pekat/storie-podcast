@@ -3,9 +3,6 @@ const player = new Plyr('#player', {
 });
 
 $('#tes').click(function(){
-  localStorage.removeItem("datajudul");
-  localStorage.removeItem("dataaudio");
-  localStorage.removeItem("datathumbnail");
   window.history.go(-1);
   return false;
 });
