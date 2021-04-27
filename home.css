@@ -34,7 +34,8 @@ header .image img {
 
 .container {
   margin-top: 5rem;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 6rem;
   background-color: white;
 }
 .container .wrapper {
@@ -107,9 +108,9 @@ header .image img {
 }
 .container .wrapper .title {
   padding: 0 1rem;
-  display: none;
 }
 .container .wrapper .title h3 {
+  margin-top: 2rem;
   line-height: 15px;
 }
 .container .wrapper .title small {
@@ -117,7 +118,6 @@ header .image img {
   color: grey;
   font-weight: 500;
 }
-
 
 .navbar {
   width: 100%;
@@ -162,4 +162,32 @@ header .image img {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.trending .group .card {
+  padding: 10px;
+}
+.trending .group {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+.trending .group .card:first-child {
+  margin: 0 0rem 0 7px;
+}
+.trending .group .lastcard {
+  height: 100px;
+  padding: 2px;
+}
+.trending .group .card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.trending .group .card p {
+  max-width: 100px;
+  font-weight: 600;
+}
+.trending .group .card small {
+  color: gray;
 }
