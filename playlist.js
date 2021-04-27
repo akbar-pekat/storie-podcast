@@ -3,8 +3,13 @@ var swiper = new Swiper('.swiper-container', {
   loop: false,
   slideToClickedSlide: true,
   simulateTouch: true,
-  slidesPerView: 'auto',
+  slidesPerView: 4,
 });
+
+const player = new Plyr('#player', {
+  controls: ['play','progress','current-time','volume'],
+});
+
 
 $('.tab .item').click(function(){
   $('.tab .item').removeClass("active");
@@ -20,8 +25,6 @@ $('#deskripsi').click(function(){
 });
 
 $('#tes').click(function(){
-  localStorage.removeItem("datacerita");
-  localStorage.removeItem("datasys");
   window.history.go(-1);
   return false;
 });
@@ -60,23 +63,41 @@ client.getEntries({
     var keterangan = ei[i].fields.keteranganEpisode;
     if (datacerita == idcerita) {
       swiper.appendSlide('<div class="swiper-slide" data-judul="'+judul+'" data-audio="'+audio+'" data-thumbnail="'+thumbnail+'"><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="thumbnail"><img src="'+thumbnail+'" /></div><div class="text"><p>'+judul+'</p><small>'+keterangan+'</small></div></div>')
+      swiper.appendSlide('<div class="swiper-slide" data-judul="'+judul+'" data-audio="'+audio+'" data-thumbnail="'+thumbnail+'"><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="thumbnail"><img src="'+thumbnail+'" /></div><div class="text"><p>'+judul+'</p><small>'+keterangan+'</small></div></div>')
+      swiper.appendSlide('<div class="swiper-slide" data-judul="'+judul+'" data-audio="'+audio+'" data-thumbnail="'+thumbnail+'"><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="thumbnail"><img src="'+thumbnail+'" /></div><div class="text"><p>'+judul+'</p><small>'+keterangan+'</small></div></div>')
     }
   }
   $(".swiper-slide").click(function(event) {
     event.preventDefault();
     $(".swiper-slide .iconify").hide();
     $(this).find(".iconify").fadeIn();
+    $(".player").css("bottom","0px")
     var datajudul = $(this).attr("data-judul");
     var dataaudio= $(this).attr("data-audio");
     var datathumbnail = $(this).attr("data-thumbnail");
     var datacerita = $("#judul").text();
     var dataauthor = $("#author").text();
-    localStorage.setItem("datajudul", datajudul);
+    /*localStorage.setItem("datajudul", datajudul);
     localStorage.setItem("datathumbnail", datathumbnail);
     localStorage.setItem("dataaudio", dataaudio);
     localStorage.setItem("datacerita", datacerita);
-    localStorage.setItem("dataauthor", dataauthor);
-    window.location.href = "play.html"
+    localStorage.setItem("dataauthor", dataauthor);*/
+    $("#player").attr("src", dataaudio);
+    setTimeout(function() {
+      $('#player').get(0).play().then(_ => {
+        if ('mediaSession' in navigator) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: datajudul,
+            artist: 'Storie',
+            album: datacerita,
+            artwork: [
+              { src: datathumbnail, sizes: '512x512', type: 'image/png' },
+            ]
+          });
+        }
+      })
+    }, 1000);
+    //window.location.href = "play.html"
     /*var dataaudio = $(this).attr("data-audio");
     $("#player").attr("src", dataaudio);
     var metacerita = $("#judul").text();
