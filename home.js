@@ -25,7 +25,6 @@ client.getEntries({
     var judul = ei[i].fields.judulCerita;
     var thumbnail = ei[i].fields.thumbnailCerita;
     var lisensi = ei[i].fields.lisensiCerita;
-    //swiper.appendSlide('<div class="swiper-slide"><a class="link" href="#" data-sys="'+idsys+'" data-cerita="'+idcerita+'"></a><img src="'+thumbnail+'"/><div class="data"><h3>'+judul+'</h3><small>'+lisensi+'</small></div></div>')
     swiper.appendSlide('<div class="swiper-slide"><a class="link" href="#" data-sys="'+idsys+'" data-cerita="'+idcerita+'"></a><div class="thumbnail"><img src="'+thumbnail+'"/></div><span class="iconify" data-icon="fe:play" data-inline="false"></span><div class="text"><h3>'+judul+'</h3><small>'+lisensi+'</p></div></div>')
   }
   
